@@ -5,36 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/icon.png">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   
-  <!-- Header with logo and nav -->
-   <header class="site-header">
-  <img src="images/logo.png" alt="HBnB Logo" class="logo">
-
-  <nav class="main-nav">
-    <a href="login.html" class="login-button" id="login-link">Login</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header class="main-header">
+    <a href="index.html"><div class="logo">HBNB</div></a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">Support</a>
+      <a href="#">Location</a>
+      <a id="login-link" href="login.html" class="login-button">Login</a>
+    </nav>
+  </header>
 
 
   <main class="login-page">
-    <section class="login-form-section">
-      <h2>Welcome Back</h2>
-      <p>Please log in to your account</p>
+    <div class="login-container">
+        <!-- Left Side: Form -->
+        <div class="login-form-section">
+            <h1>Login</h1>
+            <p>Welcome back! Please log in to your account.</p>
+            <form id="login-form">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-      <form id="login-form" class="login-form">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
 
-        <button type="submit">Login</button>
-      </form>
-    </section>
+        <!-- Right Side: Video -->
+        <div class="login-image-section">
+          <video autoplay muted loop playsinline>
+            <source src="images/video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+    </div>
   </main>
 
   <footer class="site-footer">

@@ -10,76 +10,199 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" href="images/icon.png"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, #f4f4f6, #e0e0e0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 500px;
+      transition: transform 0.2s;
+    }
+
+    .form-container:hover {
+      transform: translateY(-3px);
+    }
+
+    .form-container h1 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #111;
+    }
+
+    .form-container p {
+      font-size: 0.95rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+      color: #333;
+      margin-top: 1rem;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      margin-top: 0.2rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #f9f9f9;
+      appearance: none;
+    }
+
+    form input:focus,
+    form textarea:focus,
+    form select:focus {
+      outline: none;
+      border-color: #000;
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+
+    /* Custom dropdown arrow */
+    form select {
+      background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px 16px;
+      cursor: pointer;
+    }
+
+    form textarea {
+      resize: vertical;
+    }
+
+    form button {
+      width: 100%;
+      padding: 0.9rem;
+      margin-top: 1.8rem;
+      background-color: #000;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    form button:hover {
+      background-color: #333;
+      transform: translateY(-2px);
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #555;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <a href="index.html">
-  <img src="images/logo.png" alt="HBnB Logo" class="logo">
-</a>
+  <div class="form-container">
+    <h1>Add a Review</h1>
+    <p id="place-hint">Share your thoughts about this place.</p>
 
-    <nav class="main-nav">
-      <a href="login.html" class="login-button" id="login-link">Login</a>
-    </nav>
-  </header>
+    <form id="review-form" autocomplete="off">
+      <label for="review-text">Your Review</label>
+      <textarea id="review-text" name="review" rows="5" placeholder="Write your experience..." required></textarea>
 
-  <!-- Page content -->
-  <main class="place-details-page">
-    <section class="add-review-section">
-      <h2>Add a Review</h2>
-      <p id="place-hint" class="pd-muted" style="margin-bottom: 1rem;"></p>
+      <label for="rating">Rating</label>
+      <select id="rating" name="rating" required>
+        <option value="5" selected>5 – Excellent</option>
+        <option value="4">4 – Very Good</option>
+        <option value="3">3 – Good</option>
+        <option value="2">2 – Fair</option>
+        <option value="1">1 – Poor</option>
+      </select>
 
-      <!-- Review form -->
-      <form id="review-form" class="add-review form" autocomplete="off">
-        <label for="review-text">Your review</label>
-        <textarea id="review-text" name="review" rows="5" placeholder="Write your experience..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
 
-        <label for="rating">Rating</label>
-        <select id="rating" name="rating" required>
-          <option value="5" selected>5 – Excellent</option>
-          <option value="4">4 – Very good</option>
-          <option value="3">3 – Good</option>
-          <option value="2">2 – Fair</option>
-          <option value="1">1 – Poor</option>
-        </select>
+    <a id="back-to-place" class="back-link" href="index.html">Back to Place</a>
+  </div>
 
-        <button type="submit">Submit Review</button>
-      </form>
-
-      <!-- Back link (filled by JS with current place id) -->
-      <div style="margin-top:1rem;">
-        <a id="back-to-place" class="details-button" href="#">Back to place</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 HBnB. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </footer>
-
-  <!-- Script -->
-  <script src="scripts.js"></script>
   <script>
-    // Small helper to show place id hint and wire the back link
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       const pid = params.get('id');
       const hint = document.getElementById('place-hint');
       const back = document.getElementById('back-to-place');
+      const form = document.getElementById('review-form');
+
       if (pid) {
         hint.textContent = `You are reviewing place ID: ${pid}`;
         back.href = `place.html?id=${encodeURIComponent(pid)}`;
       } else {
         hint.textContent = 'Missing place ID.';
       }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const token = localStorage.getItem("access_token");
+        const text = document.getElementById("review-text").value.trim();
+        const rating = parseInt(document.getElementById("rating").value);
+
+        if (!pid) {
+          alert("Missing place ID.");
+          return;
+        }
+
+        try {
+          const res = await fetch("http://127.0.0.1:5000/api/v1/reviews", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              ...(token ? { "Authorization": `Bearer ${token}` } : {})
+            },
+            body: JSON.stringify({ place_id: pid, comment: text, rating: rating })
+          });
+
+          if (!res.ok) {
+            const err = await res.json();
+            alert("Error: " + (err.message || res.statusText));
+            return;
+          }
+
+          alert("Review submitted successfully!");
+          window.location.href = `place.html?id=${encodeURIComponent(pid)}`;
+        } catch (err) {
+          alert("Network error: " + err.message);
+        }
+      });
     });
   </script>
 </body>

@@ -15,38 +15,52 @@ USERS = {
 }
 
 PLACES = [
+
     {
-        "id": "a1",
-        "title": "Ocean View Cabin",
-        "price": 120,
-        "description": "Relaxing cabin with ocean view.",
-        "latitude": 24.7136,
-        "longitude": 46.6753,
-        "host": "John Doe",
-        "country": "SA",
-        "city": "Riyadh",
-        "amenities": ["Wifi", "Air conditioning", "Kitchen"],
-        "images": ["images/sample1.jpg"]
-    },
-    {
-        "id": "b2",
-        "title": "Mountain Retreat",
-        "price": 98,
-        "description": "Cozy escape in the mountains",
-        "latitude": 36.7783,
-        "longitude": -119.4179,
-        "host": "Jane Smith",
-        "country": "US",
-        "city": "Fresno",
-        "amenities": ["Heating", "Parking"],
-        "images": ["images/sample2.jpg"]
-    }
+    "id": "lx1",
+    "title": "Saka Margo House",
+    "price": 350000,
+    "description": "Inspired by classic New England architecture.",
+    "latitude": 40.7128,
+    "longitude": -74.0060,
+    "host": "Alexander Morgan",
+    "country": "US",
+    "city": "New York",
+    "amenities": ["Infinity Pool", "Smart Home System", "Private Gym", "Cinema Room", "Wine Cellar"],
+    "images": ["images/sample1-1.jpg"]
+  },
+  {
+    "id": "lx2",
+    "title": "Palm Oasis Villa",
+    "price": 475000,
+    "description": "Stunning beachfront villa with ocean views.",
+    "latitude": 25.276987,
+    "longitude": 55.296249,
+    "host": "Layla Al-Fahim",
+    "country": "UAE",
+    "city": "Dubai",
+    "amenities": ["Private Beach", "Jacuzzi", "Rooftop Lounge", "Underground Parking", "Concierge Service"],
+    "images": ["images/sample2.jpg"]
+  },
+  {
+    "id": "lx3",
+    "title": "Skyline Penthouse",
+    "price": 600000,
+    "description": "An exclusive penthouse on the 45th floor.",
+    "latitude": 51.5074,
+    "longitude": -0.1278,
+    "host": "Charlotte Williams",
+    "country": "UK",
+    "city": "London",
+    "amenities": ["Rooftop Pool", "Helipad Access", "24/7 Security", "Designer Kitchen", "Private Elevator"],
+    "images": ["images/sample3.jpg"]
+  }
     
 ]
 
 REVIEWS = [
-    {"id": "r1", "place_id": "a1", "user": "reemah", "rating": 5, "comment": "Amazing view!"},
-    {"id": "r2", "place_id": "a1", "user": "osama", "rating": 4, "comment": "Very cozy."},
+    {"id": "r1", "place_id": "lx1", "user": "reemah", "rating": 5, "comment": "Amazing view!"},
+    {"id": "r2", "place_id": "lx1", "user": "osama", "rating": 4, "comment": "Very cozy."},
 ]
 
 # ===== Helpers =====

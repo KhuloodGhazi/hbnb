@@ -2,135 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HBnB - Explore Unique Places</title>
- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css2?family=Untitled+Sans&family=DM+Sans:wght@700&display=swap" rel="stylesheet">
-
-
-
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HBNB – Find Your Home</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/icon.png">
 </head>
 <body>
-  <!-- Header with logo and nav -->
-  <header class="site-header">
-    <a href="index.html">
-  <img src="images/logo.png" alt="HBnB Logo" class="logo">
-</a>
 
-    <nav class="main-nav">
-      <a href="login.html" class="login-button" id="login-link">Login</a>
+  <!-- HEADER -->
+  <header class="main-header">
+    <a href="index.html"><div class="logo">HBNB</div></a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">Support</a>
+      <a href="#">Location</a>
+      <a id="login-link" href="login.html" class="login-button">Login</a>
     </nav>
   </header>
 
-
-
-  <!-- Hero section -->
+  <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-text">
-      <h1>Find <span>Unique Places</span> to Stay & Experience.</h1>
-      <p>Join thousands of travelers exploring the world comfortably.</p>
-    
-    </div>
-    <div class="hero-image">
-      <img src="images/hero_place.jpg" alt="Featured Place">
+    <div class="hero-overlay">
+      <h1>Finding Your New Home Is Simple.</h1>
+      <p>Browse thousands of listings and find the perfect place for your needs.</p>
+
+      <div class="search-bar">
+        <input type="text" placeholder="City Street">
+        <input type="text" placeholder="Type of Rent">
+        <select id="price-filter">
+          <option value="All">All</option>
+          <option value="10">≤ $10</option>
+          <option value="50">≤ $50</option>
+          <option value="100">≤ $100</option>
+          <option value="500000">≤ $500,000</option>
+          <option value="1000000">≤ $1,000,000</option>
+        </select>
+        <button id="search-btn">Search</button>
+      </div>
     </div>
   </section>
 
-<!-- Mission section styled like reference -->
-<section class="hero-intro">
-  <div class="hero-wrap">
-    
-    <!-- Left: video with border accent -->
-    <div class="media-card">
-      <video class="hero-video"
-             autoplay
-             loop
-             muted
-             playsinline
-             preload="metadata"
-             poster="images/poster.jpg"
-             disablepictureinpicture>
-        <source src="videos/house-nature.webm" type="video/webm">
-        <source src="images/7664029-hd_2048_1080_24fps.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <!-- MOST VIEWED -->
+  <section class="most-viewed">
+    <h2>Most Viewed</h2>
+    <p>Discover a range of exclusive listings with top-notch features.</p>
+    <div id="places-list" class="places-grid"></div>
+  </section>
+
+  <!-- PROMO SECTION -->
+  <section class="promo">
+    <div class="promo-text">
+      <h2>The Easiest Method To Find a House</h2>
+      <p>We make finding your dream home simple, fast, and tailored to your needs.</p>
+      <div class="index-image-section">
+        <video autoplay muted loop playsinline>
+          <source src="images/video4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
       
     </div>
-
-    <!-- Right: text content -->
-    <div class="hero-copy">
-      <h1>Make Your Stay <br><span class="strong">Truly Memorable</span></h1>
-      <p class="sub">Find places that match <span class="em">your lifestyle</span></p>
-      <p class="desc">
-        Discover hand-picked stays designed to inspire comfort, creativity, 
-        and connection. Every place is chosen with care to reflect unique experiences. 
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-<!-- Filter section -->
-<section class="filter-section">
-  <label for="price-filter">Filter by price:</label>
-  <select id="price-filter"></select> 
-</section>
-
-  <!-- Places showcase -->
- 
-<section id="places-list" class="place-cards">
-  <!-- Place cards will be injected here dynamically -->
-</section>
-
-
-  <!-- Features / initiatives -->
-  <section class="features">
-    <h2>Our Features</h2>
-    <div class="feature-grid">
-      <div class="feature-item">
-        <h3>Verified Reviews</h3>
-        <p>All reviews are written by real users.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Smart Filtering</h3>
-        <p>Find exactly what you want by price, type or location.</p>
-      </div>
-      <div class="feature-item">
-        <h3>24/7 Support</h3>
-        <p>Our team is here to help you anytime.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Easy Booking</h3>
-        <p>Secure and fast reservation process.</p>
-      </div>
-    </div>
   </section>
 
-
-  <!-- Newsletter section -->
-  <section class="newsletter">
-    <h2>Subscribe for Updates</h2>
-    <p>Get the latest news on new places and offers.</p>
-    <form class="subscribe-form">
-      <input type="email" placeholder="Your email address" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 HBnB. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </footer>
+  <footer>© All rights reserved</footer>
   <script src="scripts.js"></script>
 </body>
 </html>
